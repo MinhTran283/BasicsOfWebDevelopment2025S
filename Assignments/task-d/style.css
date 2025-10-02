@@ -1,0 +1,58 @@
+/*
+Author: Minh Tran
+Date: 2025-10-02
+*/
+
+/* Element selectors */
+h1 {
+  color: darkblue;
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Class selectors */
+.box {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.highlight {
+  background-color: yellow;
+  padding: 10px;
+}
+
+/* ID selector */
+#special-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Group selectors */
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+
+/* Descendant selectors */
+section ul li {
+  list-style-type: square;
+  color: green;
+}
+
+/* Attribute selectors */
+a[target="_blank"] {
+  color: blue;
+  text-decoration: underline;
+}
+
+img[alt] {
+  border: 3px solid #555;
+  max-width: 400px;
+  display: block;
+  margin: 10px auto;
+}
