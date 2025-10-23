@@ -1,0 +1,120 @@
+/*
+Author: Minh Tran
+Date: 2025-10-23
+*/
+
+:root {
+  --main-color: #003366;
+  --accent-color: #0088cc;
+  --bg-color: #f4f8fb;
+  --text-color: #333;
+  --border-color: #ccc;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.content {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 1rem 0;
+}
+
+.site-header {
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.intro {
+  text-align: center;
+  margin: 1rem 0 2rem;
+}
+
+.student-info {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.student-info h2 {
+  color: var(--main-color);
+  margin-top: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  text-align: center;
+  padding: 0.75rem;
+}
+
+th {
+  background-color: var(--main-color);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #eef3f8;
+}
+
+.other-content {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+}
+
+/* ≤ 768px: margins 5%, show only student-info + table */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .site-header,
+  .intro,
+  .other-content {
+    display: none;
+  }
+  .student-info,
+  .table-wrap {
+    display: block;
+  }
+}
+
+/* ≤ 640px: margins 1%, show only the table */
+@media (max-width: 640px) {
+  .content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .student-info {
+    display: none;
+  }
+}
