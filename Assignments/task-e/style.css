@@ -68,7 +68,11 @@ table {
   background-color: white;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+  table-layout: fixed;
 }
+
+th:first-child, td:first-child { width: 40%; }
+th:nth-child(n+2), td:nth-child(n+2) { width: 12%; }
 
 th, td {
   border: 1px solid var(--border-color);
@@ -91,7 +95,6 @@ tr:nth-child(even) {
   color: #666;
 }
 
-/* ≤ 768px: margins 5%, show only student-info + table */
 @media (max-width: 768px) {
   .content {
     margin-left: 5%;
@@ -108,7 +111,6 @@ tr:nth-child(even) {
   }
 }
 
-/* ≤ 640px: margins 1%, show only the table */
 @media (max-width: 640px) {
   .content {
     margin-left: 1%;
