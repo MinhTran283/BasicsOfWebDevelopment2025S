@@ -1,0 +1,68 @@
+<!--
+Author: Minh Tran
+Date: 2025-10-29
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task F – Weekly Timetable</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Weekly Timetable</h1>
+  </header>
+
+  <main class="content">
+    <section class="row">
+      <div class="card info">
+        <h2>Information</h2>
+        <p>Student name: Minh Tran</p>
+        <p>Group: NITS21K</p>
+      </div>
+
+      <div class="card form">
+        <h2>Add Course</h2>
+
+        <label for="course">Course name</label>
+        <input id="course" type="text" placeholder="e.g., Web Development Basics" />
+
+        <fieldset class="days">
+          <legend>Days (✅ = yes, ❌ = no)</legend>
+          <label><input type="checkbox" id="mon" /> Mon</label>
+          <label><input type="checkbox" id="tue" /> Tue</label>
+          <label><input type="checkbox" id="wed" /> Wed</label>
+          <label><input type="checkbox" id="thu" /> Thu</label>
+          <label><input type="checkbox" id="fri" /> Fri</label>
+        </fieldset>
+
+        <div class="actions">
+          <button id="add-row" type="button">Add row</button>
+          <button id="clear" type="button">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card table-wrap">
+      <table aria-label="Weekly timetable">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
