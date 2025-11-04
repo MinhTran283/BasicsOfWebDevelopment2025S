@@ -1,8 +1,3 @@
-/*
-Author: Minh Tran
-Date: 2025-10-29
-*/
-
 :root {
   --page-bg: #fcfdfc;
   --text: #2a2a2a;
@@ -11,64 +6,14 @@ Date: 2025-10-29
   --border: #e0e0e0;
 }
 
-* { box-sizing: border-box; }
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+body {
   background: var(--page-bg);
   color: var(--text);
-}
-
-.site-header {
-  background: var(--brand);
-  color: #fff;
-  text-align: center;
-  padding: 16px 0;
-}
-
-.content { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-}
-
-.card h2 { margin-top: 0; }
-
-fieldset {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 12px;
-  margin-top: 10px;
-}
-fieldset label { margin-right: 12px; }
-
-.actions { margin-top: 12px; display: flex; gap: 8px; }
-.actions button {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 14px;
-  background: #fff;
-  cursor: pointer;
-}
-
-.table-wrap { overflow-x: auto; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;       
-  border: 1px solid var(--border);
-}
-
-th, td {
-  border: 1px solid var(--border);
-  padding: 10px;
-  text-align: center;
 }
 
 thead th {
@@ -76,11 +21,12 @@ thead th {
   color: #fff;
 }
 
-tbody tr:nth-child(even) { background: var(--table-alt); }
+tbody tr:nth-child(even) {
+  background: var(--table-alt);
+}
 
-th:first-child, td:first-child { width: 40%; }
-th:nth-child(n+2), td:nth-child(n+2) { width: 12%; }
-
-@media (max-width: 720px) {
-  .row { grid-template-columns: 1fr; }
+table, th, td {
+  border: 1px solid var(--border);
+  border-collapse: collapse;
+  padding: 6px;
 }

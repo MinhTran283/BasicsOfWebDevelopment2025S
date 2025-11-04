@@ -1,46 +1,31 @@
-// Author: Minh Tran
-// Date: 2025-10-29
-
 (function () {
-  const $ = (sel) => document.querySelector(sel);
+  const courseInput = document.querySelector('input[type="text"]');
+  const dayChecks = Array.from(document.querySelectorAll('.days input[type="checkbox"]')).slice(0, 5);
+  const tbody = document.querySelector('tbody');
+  const buttons = document.querySelectorAll('button');
+  const addBtn = buttons[0];
+  const clearBtn = buttons[1];
 
-  const courseInput = $('#course');
-  const checks = {
-    mon: $('#mon'),
-    tue: $('#tue'),
-    wed: $('#wed'),
-    thu: $('#thu'),
-    fri: $('#fri')
-  };
-  const tbody = $('#table-body');
-  const addBtn = $('#add-row');
-  const clearBtn = $('#clear');
+  function addRow(e) {
+    e.preventDefault();
+    const name = courseInput.value.trim() || "New course";
 
-  const mark = (v) => (v ? '✅' : '❌');
+    const tr = document.createElement("tr");
 
-  function addRow() {
-    const name = (courseInput.value || 'New course').trim();
-    const tr = document.createElement('tr');
-    const cells = [
-      name,
-      mark(checks.mon.checked),
-      mark(checks.tue.checked),
-      mark(checks.wed.checked),
-      mark(checks.thu.checked),
-      mark(checks.fri.checked)
-    ];
-    cells.forEach((txt) => {
-      const td = document.createElement('td');
-      td.textContent = txt;
+    const cells = [name, ...dayChecks.map(c => c.checked ? "✅" : "❌")];
+    cells.forEach(text => {
+      const td = document.createElement("td");
+      td.textContent = text;
       tr.appendChild(td);
     });
+
     tbody.appendChild(tr);
   }
 
-  function clearForm() {
-    courseInput.value = '';
-    Object.values(checks).forEach((c) => (c.checked = false));
-    courseInput.focus();
+  function clearForm(e) {
+    e.preventDefault();
+    courseInput.value = "";
+    dayChecks.forEach(c => c.checked = false);
   }
 
   addBtn.addEventListener('click', addRow);
