@@ -1,33 +1,40 @@
-(function () {
-  const courseInput = document.querySelector('input[type="text"]');
-  const dayChecks = Array.from(document.querySelectorAll('.days input[type="checkbox"]')).slice(0, 5);
-  const tbody = document.querySelector('tbody');
-  const buttons = document.querySelectorAll('button');
-  const addBtn = buttons[0];
-  const clearBtn = buttons[1];
+document.addEventListener('DOMContentLoaded', () => {
+  const CHECK = '✅';
+  const CROSS = '❌';
 
-  function addRow(e) {
+  const form = document.getElementById('addCourseForm');
+  const tbody = document.querySelector('#timetable tbody');
+  const courseInput = document.getElementById('courseName');
+
+  const dayOrder = Array.from(
+    document.querySelectorAll('#timetable thead th')
+  ).slice(1).map(th => th.textContent.trim());
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = courseInput.value.trim() || "New course";
 
-    const tr = document.createElement("tr");
+    const name = courseInput.value.trim();
+    if (!name) return;
 
-    const cells = [name, ...dayChecks.map(c => c.checked ? "✅" : "❌")];
-    cells.forEach(text => {
-      const td = document.createElement("td");
-      td.textContent = text;
+    const checkedDays = new Set(
+      Array.from(form.querySelectorAll('input[name="day"]:checked'))
+        .map(cb => cb.value)
+    );
+
+    const tr = document.createElement('tr');
+
+    const nameTd = document.createElement('td');
+    nameTd.textContent = name;
+    tr.appendChild(nameTd);
+
+    dayOrder.forEach(day => {
+      const td = document.createElement('td');
+      td.textContent = checkedDays.has(day) ? CHECK : CROSS;
       tr.appendChild(td);
     });
 
     tbody.appendChild(tr);
-  }
-
-  function clearForm(e) {
-    e.preventDefault();
-    courseInput.value = "";
-    dayChecks.forEach(c => c.checked = false);
-  }
-
-  addBtn.addEventListener('click', addRow);
-  clearBtn.addEventListener('click', clearForm);
-})();
+    form.reset();
+    courseInput.focus();
+  });
+});
