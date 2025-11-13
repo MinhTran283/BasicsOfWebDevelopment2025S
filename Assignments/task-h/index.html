@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="index.js"></script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+
+  <header class="bg-indigo-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <h1 class="text-xl font-semibold text-center md:text-left">
+        Registration page
+      </h1>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-4">
+    <!-- top row: info + form -->
+    <div class="grid gap-4 md:grid-cols-[260px,1fr]">
+      <!-- info -->
+      <section
+        class="bg-white border border-slate-200 rounded-lg shadow-sm p-4"
+        aria-label="Student information"
+      >
+        <h2 class="text-base font-semibold mb-3">Information</h2>
+        <p class="text-sm">
+          <span class="font-semibold">Student:</span>
+          <span class="student-name">Minh Tran</span>
+        </p>
+        <p class="text-sm mt-2">
+          <span class="font-semibold">Group:</span>
+          <span class="student-group">NITS21K</span>
+        </p>
+      </section>
+
+      <!-- form -->
+      <section
+        class="bg-white border border-slate-200 rounded-lg shadow-sm p-4 md:p-5"
+        aria-label="Enrollment form"
+      >
+        <h2 class="text-base font-semibold mb-3">Submit your info</h2>
+
+        <form id="enroll-form" novalidate class="space-y-3">
+          <input type="hidden" id="ts" name="timestamp">
+
+          <!-- full name -->
+          <div>
+            <label
+              for="fullname"
+              class="block text-sm font-medium mb-1"
+            >Full name</label>
+            <input
+              id="fullname"
+              name="fullname"
+              type="text"
+              placeholder="e.g., Jane Doe"
+              class="w-full rounded border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+            <div id="err-fullname" class="mt-1 text-sm text-red-600"></div>
+          </div>
+
+          <!-- email -->
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium mb-1"
+            >Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="e.g., jane@example.com"
+              class="w-full rounded border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+            <div id="err-email" class="mt-1 text-sm text-red-600"></div>
+          </div>
+
+          <!-- phone -->
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium mb-1"
+            >Phone (+358…)</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+358..."
+              class="w-full rounded border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+            <div id="err-phone" class="mt-1 text-sm text-red-600"></div>
+          </div>
+
+          <!-- birth date -->
+          <div>
+            <label
+              for="birth"
+              class="block text-sm font-medium mb-1"
+            >Birth date</label>
+            <input
+              id="birth"
+              name="birth"
+              type="date"
+              class="w-full rounded border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            >
+            <div id="err-birth" class="mt-1 text-sm text-red-600"></div>
+          </div>
+
+          <!-- terms -->
+          <div>
+            <label class="inline-flex items-center gap-2 text-sm">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                class="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              >
+              <span>I accept the terms</span>
+            </label>
+            <div id="err-terms" class="mt-1 text-sm text-red-600"></div>
+          </div>
+
+          <!-- buttons -->
+          <div class="flex gap-2 pt-1">
+            <button
+              id="submit-btn"
+              type="submit"
+              class="inline-flex items-center justify-center rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Submit
+            </button>
+            <button
+              id="clear-btn"
+              type="button"
+              class="inline-flex items-center justify-center rounded border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Clear
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- table -->
+    <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-0">
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead>
+            <tr class="bg-indigo-900 text-white">
+              <th class="px-4 py-2 text-left font-semibold">Timestamp</th>
+              <th class="px-4 py-2 text-left font-semibold">Full name</th>
+              <th class="px-4 py-2 text-left font-semibold">Email</th>
+              <th class="px-4 py-2 text-left font-semibold">Phone</th>
+              <th class="px-4 py-2 text-left font-semibold">Birth date</th>
+              <th class="px-4 py-2 text-left font-semibold">Terms</th>
+            </tr>
+          </thead>
+          <tbody id="rows" class="divide-y divide-slate-200">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
