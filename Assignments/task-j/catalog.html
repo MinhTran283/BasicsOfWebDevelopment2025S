@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanRide Bikes — Rental Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-50 antialiased">
+  <!-- Page wrapper -->
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-full border border-zinc-600 flex items-center justify-center">
+            <span class="text-xs tracking-[0.15em] uppercase">UR</span>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-sm font-semibold tracking-wide">UrbanRide</span>
+            <span class="block text-xs text-zinc-400">City Bike Rentals</span>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300" aria-label="Main navigation">
+          <a href="index.html" class="hover:text-zinc-50 transition-colors">Home</a>
+          <a href="index.html#about" class="hover:text-zinc-50 transition-colors">About</a>
+          <a href="index.html#bikes" class="hover:text-zinc-50 transition-colors">Bikes</a>
+          <a href="index.html#why" class="hover:text-zinc-50 transition-colors">Why us</a>
+          <a href="index.html#cta" class="hover:text-zinc-50 transition-colors">Contact</a>
+        </nav>
+        <a href="index.html" class="hidden sm:inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1.5 text-xs font-medium tracking-wide uppercase hover:bg-zinc-50 hover:text-zinc-900 transition-colors">
+          Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-1">
+      <!-- Intro Section -->
+      <section class="border-b border-zinc-900 bg-gradient-to-b from-zinc-950 to-zinc-900">
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">Rental Catalog</h1>
+            <p class="text-sm sm:text-base text-zinc-400">
+              Browse our complete selection of city bikes for rent. All bikes include lights, locks, and basic accessories. Flexible rental periods from a few hours to several weeks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Grid -->
+      <section class="border-b border-zinc-900 bg-zinc-950">
+        <div class="mx-auto max-w-6xl px-4 py-10 md:py-12">
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Product 1 - City Classic -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                     alt="Black city bike on a street" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">City Classic</h3>
+                <p class="text-xs text-zinc-400">
+                  Upright city bike with 7 gears, comfortable saddle, and reliable brakes. Perfect for daily commutes and short trips around town.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">15 €/d • 90 €/wk</span>
+                  <span class="text-zinc-500">Comfort</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 2 - Hybrid Explorer -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                     alt="Hybrid bike near a bridge" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">Hybrid Explorer</h3>
+                <p class="text-xs text-zinc-400">
+                  Lightweight hybrid bike with 21-speed gearing. Suitable for both city streets and light trails. Great for weekend exploration.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">20 €/d • 120 €/wk</span>
+                  <span class="text-zinc-500">Versatile</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 3 - Electric Boost -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://i.imgur.com/iHopGpt.png" 
+                     alt="Modern electric bike with battery" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">Electric Boost</h3>
+                <p class="text-xs text-zinc-400">
+                  E-bike with smooth electric assist, 5 power levels, and 80km range. Ideal for hills, longer distances, or effortless commuting.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">35 €/d • 199 €/wk</span>
+                  <span class="text-zinc-500">Electric</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 4 - Compact Fold -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://i.imgur.com/l0KrOml.jpeg" 
+                     alt="Compact folding bike for easy storage" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">Compact Fold</h3>
+                <p class="text-xs text-zinc-400">
+                  Lightweight folding bike with 6-speed gearing. Folds in seconds for easy storage on public transport or in small apartments.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">18 €/d • 110 €/wk</span>
+                  <span class="text-zinc-500">Compact</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 5 - Urban Cargo -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://i.imgur.com/n7VdUh7.png" 
+                     alt="Cargo bike with large front basket" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">Urban Cargo</h3>
+                <p class="text-xs text-zinc-400">
+                  Heavy-duty cargo bike with large front basket and reinforced frame. Perfect for shopping, deliveries, or carrying kids.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">25 €/d • 150 €/wk</span>
+                  <span class="text-zinc-500">Utility</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 6 - Premium Tourer -->
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <figure class="aspect-[4/3] w-full overflow-hidden border-b border-zinc-800 bg-zinc-800/80">
+                <img src="https://i.imgur.com/Ndawd5d.png" 
+                     alt="Premium touring bike for long distance" 
+                     class="h-full w-full object-cover" 
+                     loading="lazy"
+                     referrerpolicy="no-referrer">
+              </figure>
+              <div class="flex flex-1 flex-col gap-3 p-4">
+                <h3 class="text-sm font-semibold text-zinc-50">Premium Tourer</h3>
+                <p class="text-xs text-zinc-400">
+                  High-end touring bike with premium components, comfortable geometry, and luggage mounts. Ideal for day trips and weekend tours.
+                </p>
+                <div class="mt-auto flex items-center justify-between text-xs">
+                  <span class="rounded-full border border-zinc-700 px-3 py-1 text-zinc-200">30 €/d • 180 €/wk</span>
+                  <span class="text-zinc-500">Premium</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section -->
+      <section class="border-b border-zinc-900 bg-zinc-950">
+        <div class="mx-auto max-w-6xl px-4 py-10 md:py-12">
+          <div class="max-w-3xl mx-auto space-y-6">
+            <div class="text-center">
+              <h2 class="text-lg font-semibold tracking-tight">How to use our bike locks</h2>
+              <p class="mt-2 text-sm text-zinc-400">
+                Watch this short tutorial to learn how to properly secure your rental bike.
+              </p>
+            </div>
+            
+            <div class="aspect-video w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <iframe 
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/blqIzJqQxA4"
+                title="How to use our bike locks"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            
+            <figcaption class="text-center text-xs text-zinc-500">
+              Safety tutorial: Proper bike locking techniques to keep your rental secure.
+            </figcaption>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 bg-zinc-950">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-500">
+        <p>© 2025 UrbanRide Bikes — All rights reserved.</p>
+        <a href="index.html" class="hover:text-zinc-300 transition-colors">Back to Home</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
