@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanRide Bikes — Rental Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-950 text-zinc-50 antialiased">
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-full border border-zinc-600 flex items-center justify-center">
+            <span class="text-xs tracking-[0.15em] uppercase">UR</span>
+          </div>
+          <div class="leading-tight">
+            <span class="block text-sm font-semibold tracking-wide">UrbanRide</span>
+            <span class="block text-xs text-zinc-400">City Bike Rentals</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+          <a href="index.html" class="hover:text-zinc-50 transition-colors">Home</a>
+          <a href="catalog.html" class="hover:text-zinc-50 transition-colors">Catalog</a>
+          <a href="order.html" class="hover:text-zinc-50 transition-colors">Order</a>
+        </nav>
+
+        <a href="catalog.html"
+           class="hidden sm:inline-flex items-center rounded-full border border-zinc-700 bg-zinc-900 px-4 py-1.5 text-xs font-medium tracking-wide uppercase hover:bg-zinc-50 hover:text-zinc-900 transition-colors">
+          View Catalog
+        </a>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-1">
+
+      <!-- Intro section -->
+      <section class="border-b border-zinc-900 bg-gradient-to-b from-zinc-950 to-zinc-900">
+        <div class="mx-auto max-w-3xl px-4 py-12 md:py-16 text-center space-y-4">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">Place a Rental Order</h1>
+          <p class="text-sm sm:text-base text-zinc-400">
+            Fill out the form below to request a bike rental. Our team will confirm availability
+            and contact you shortly with pickup details.
+          </p>
+        </div>
+      </section>
+
+      <!-- Order Form -->
+      <section class="bg-zinc-950 border-b border-zinc-900">
+        <div class="mx-auto max-w-3xl px-4 py-10 md:py-12">
+
+          <form action="#" method="post" class="space-y-10">
+
+            <!-- Customer Info -->
+            <fieldset class="space-y-4">
+              <legend class="text-lg font-semibold text-zinc-50">Customer information</legend>
+
+              <!-- Full name -->
+              <div class="flex flex-col gap-1">
+                <label for="fullname" class="text-sm text-zinc-300">Full name *</label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+
+              <!-- Email -->
+              <div class="flex flex-col gap-1">
+                <label for="email" class="text-sm text-zinc-300">Email address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+
+              <!-- Phone number -->
+              <div class="flex flex-col gap-1">
+                <label for="phone" class="text-sm text-zinc-300">Phone number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="+358 40 123 4567"
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+            </fieldset>
+
+            <!-- Rental details -->
+            <fieldset class="space-y-4">
+              <legend class="text-lg font-semibold text-zinc-50">Rental details</legend>
+
+              <!-- Item select -->
+              <div class="flex flex-col gap-1">
+                <label for="item" class="text-sm text-zinc-300">Bike model *</label>
+                <select
+                  id="item"
+                  name="item"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+                  <option value="">Select a bike</option>
+                  <option>City Classic</option>
+                  <option>Hybrid Explorer</option>
+                  <option>Electric Boost</option>
+                  <option>Compact Fold</option>
+                  <option>Urban Cargo</option>
+                  <option>Premium Tourer</option>
+                </select>
+              </div>
+
+              <!-- Start date -->
+              <div class="flex flex-col gap-1">
+                <label for="start" class="text-sm text-zinc-300">Start date *</label>
+                <input
+                  type="date"
+                  id="start"
+                  name="start"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+
+              <!-- End date -->
+              <div class="flex flex-col gap-1">
+                <label for="end" class="text-sm text-zinc-300">End date *</label>
+                <input
+                  type="date"
+                  id="end"
+                  name="end"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+
+              <!-- Quantity -->
+              <div class="flex flex-col gap-1">
+                <label for="quantity" class="text-sm text-zinc-300">Quantity *</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max="10"
+                  required
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                >
+              </div>
+
+              <!-- Additional info -->
+              <div class="flex flex-col gap-1">
+                <label for="message" class="text-sm text-zinc-300">Additional message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                ></textarea>
+              </div>
+
+            </fieldset>
+
+            <!-- Consent -->
+            <fieldset class="space-y-4">
+              <legend class="text-lg font-semibold text-zinc-50">Consent</legend>
+
+              <label class="flex items-start gap-3 text-sm text-zinc-300">
+                <input type="checkbox" required class="mt-1">
+                <span>I accept the rental terms and privacy policy *</span>
+              </label>
+
+              <label class="flex items-start gap-3 text-sm text-zinc-300">
+                <input type="checkbox" class="mt-1">
+                <span>Subscribe to newsletter (optional)</span>
+              </label>
+            </fieldset>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="w-full rounded-full bg-zinc-50 text-zinc-900 font-semibold text-sm py-3 uppercase tracking-wide hover:bg-zinc-300 transition-colors"
+            >
+              Submit rental request
+            </button>
+
+          </form>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 bg-zinc-950">
+      <div class="mx-auto max-w-6xl px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-zinc-500">
+        <p>© 2025 UrbanRide Bikes — All rights reserved.</p>
+
+        <div class="flex gap-4">
+          <a href="index.html" class="hover:text-zinc-300 transition-colors">Home</a>
+          <a href="catalog.html" class="hover:text-zinc-300 transition-colors">Catalog</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
